@@ -8,7 +8,7 @@ int main()
  if(curl)
  {
     CURLcode res;
-    curl_easy_setopt(curl,CURLOPT_URL,"http://10.10.10.100/api/QE6OvR5obnSdP82JolcKCUEsOQL5XFZOwvxd3g7h/lights");
+    curl_easy_setopt(curl,CURLOPT_URL,"http://10.10.10.100/api/QE6OvR5obnSdP82JolcKCUEsOQL5XFZOwvxd3g7h/lights");//for device id:  /lights/id
 
 
     FILE *output_file = fopen("file1.json", "a+");
@@ -18,16 +18,9 @@ int main()
     res = curl_easy_perform(curl);
     curl_easy_cleanup(curl);
 
-
-    /*char c;
-    while((c = fgetc(output_file))!=EOF)
-    {
-     printf("%s",c);
-    }*/
-
     fclose(output_file);
  }
-
+  return 0;
 
 }
 
